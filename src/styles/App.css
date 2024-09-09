@@ -8,7 +8,8 @@
 #root {
   width: 100%;
   margin: 0 auto;
-
+  overflow-x: initial !important;
+  scrollbar-width: 0px;
   text-align: center;
 }
 

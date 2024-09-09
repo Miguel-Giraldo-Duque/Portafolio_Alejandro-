@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom'
 import { useState, useEffect, useRef ,useContext} from 'react'
 import { Db, RequierdTags } from './provider';
 import { v4 as uuidv4  } from 'uuid'
-
-
+import useIsWideScreen from './narrowScreen'; 
 
 export const ArticlesHome = () => {
     const [currentIndex , setIndex] = useState(3)
@@ -18,7 +17,7 @@ export const ArticlesHome = () => {
     const selectedFilter = useRef() 
     const [filtered, setFiltered] = useState(data);
     const [filteredArticles, setFilteredArticles] = useState(data);
-
+    const [selected , setSelect] = useState(false)
 
     
     console.log(data)
@@ -132,14 +131,16 @@ export const ArticlesHome = () => {
         }
     }      
 
-    
+    const isWideScreen = useIsWideScreen(); // Por defecto, usa 744px como umbral
   return (
     <>
     <NavBar></NavBar>
     <div className='mainArticles'>
         <h2>Latest articles</h2>
         <div className="carousel__filters">
-                {
+            <div className='filters__tags'>
+            
+            {isWideScreen ?  
                     requierdTags.map((tag) =>{
                         return(
                             <div className='tag' key={uuidv4()} onClick={filterBytag}>
@@ -147,12 +148,23 @@ export const ArticlesHome = () => {
                             </div>
                         )
                     })
-                }
+                : 
+                
+                <div>
+                    <p>No disponible los filtros</p>
+                </div>
+            }
+          
+            </div>
+               
 
               
-
-                <div className="carousel__leftArrow"onClick={() => scrollToCard("prev")} >Prev</div>
-                <div className="carousel__leftArrow" onClick={() => scrollToCard()}>Next</div>
+                <div className='carousel__move'>
+                    <div className="carousel__RightArrow"onClick={() => scrollToCard("prev")} ><img src="./arrow.png" alt="" /></div>
+                    <p>{currentIndex}/5</p>
+                    <div className="carousel__leftArrow" onClick={() => scrollToCard()}><img src="./arrow.png" alt="" /></div>
+                </div>
+               
         </div>
         <div className='mainArticles__carousel' ref={listNodes}>
             {
@@ -185,19 +197,26 @@ export const ArticlesHome = () => {
 
 
         <div className="mainArticles__serach">
-            <h3>My content</h3>
+            <h2>My content</h2>
             <input type="search" placeholder='serach for title'   value={q} onChange={(e) => setQ(e.target.value)}/>
 
             <div className="serach__filters" ref={selectedFilter}>
-                {
-                requierdTags.map((tag) =>{
-                        return(
-                            <div className='tag' key={uuidv4()} onClick={filterBytag} >
-                                <p>{tag}</p>
-                            </div>
-                            )
-                    })
+                
+                { isWideScreen ? 
+                    requierdTags.map((tag) =>{
+                            return(
+                                <div className='tag' key={uuidv4()} onClick={filterBytag} >
+                                    <p>{tag}</p>
+                                </div>
+                                )
+                        })
+                    
+                    :                
+                <div>
+                    <p>No disponible los filtros</p>
+                </div>
                 }
+                
             </div>
 
 

@@ -1,0 +1,81 @@
+/* mobile.css */
+
+@media (max-width: 484px) {
+    .mainArticles{
+        overflow-x:hidden ;
+    }
+
+    .main{
+        overflow-y: visible;
+    }
+    .conteinerContent{
+        height: 780px;
+        margin: 8px 16px;
+        width: 317px;
+    }
+
+    .conteinerContent__redes div{
+        margin-left: 8px;
+    }
+    .carousel__item{
+        width: 250px;
+        height: fit-content;
+    }
+    .carousel__item .item__img {
+        width: 200px;
+        height: 120px;
+    }
+
+    .article__item{
+        width: 325px;
+        margin-left: 20px;
+        height: 470px;
+    }
+    .mainArticles__article{
+        padding: 24px;
+    }
+
+    .item__content {
+        text-align: left;
+        margin: 25px 0px 12px 0px;
+    }
+
+    .carousel__filters{
+        width: 300px;
+    }
+
+    .articleMain {
+        left: 20px;
+        width: 360px;
+    }
+
+    .info__article p:nth-child(3){
+        margin-left: 0;
+    }
+
+    .info__article p:nth-child(4){
+        margin-top: 20px;
+    }
+
+    .articleMain__info button{
+        margin-top: 36px;
+        left: calc(28%);
+    }
+
+    .mainChat__animation{
+        left: calc(25%);
+    }
+    #controls{
+        position: relative;
+        left: -140px;
+        transform: rotate(-90deg);
+        top: 86px;
+        z-index: 3;
+        transition: .6s;
+        width: 70px;
+        background-color: #262626;
+    }
+}
+
+
+  

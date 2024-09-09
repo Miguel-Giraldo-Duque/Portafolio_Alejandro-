@@ -1,0 +1,136 @@
+/* tablet.css */
+:root {
+    line-height: 1.5;
+    font-weight: 400; 
+    color-scheme: light dark;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    
+    /* Colores verde version */
+  
+    --text: #C4A4A4;
+    --supp: #272B2B;
+    --primary2: #48DC2E;
+    --background2: #141719;
+    --bg-supp : #182222;
+    --buttons--secondary: #262626;
+    
+  
+    /*Tamaños*/
+  
+    --text--montserrat: 16px;
+    --body-2: 16px;
+    --h1: 40px;
+    --h3: 25px;
+    --h2-bold: 30px;
+    --button: 15px;
+  
+    --font-family-text : "Montserrat", sans-serif;
+    --font-family-titles :  "Space Mono", monospace;
+    font-family: var(--font-family-text);
+    font-family: var(--font-family-text);
+    color: var(--text);
+    background-color: var(--background2);
+  
+  }
+
+
+
+@media (max-width: 744px) {
+    .main {
+      justify-content: center;
+    }
+  
+    .header {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .header nav {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+
+
+    .contenierNav li {
+        display: flex;
+        padding: 0px;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    
+    .contenierNav li button,   a{ 
+        margin: 0;
+    }
+
+    .contenierNav li > a:nth-child(1) {
+        margin-right: 0px;
+    }
+
+    .contenierNav li {
+        position: fixed;
+        z-index: 3;
+        display: none;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 304px;
+        flex-direction: column;
+        padding-top: 80px;
+        background-color: var(--buttons--secondary);
+        padding-right: 40px;
+    }
+
+
+    .contenierNav li a , button {
+        padding-top: 10px;
+    }
+
+
+    .contenierNav li  button {
+        margin-top: 10px;
+    }
+
+    #hamburger img{
+        margin-right: 26px;
+        width: 24px;
+        height: 24px;
+    }
+
+    #hamburger{
+        display: block;
+        z-index: 4;
+    }
+
+
+    .mainArticles__carousel {
+        position: relative;
+        width: 70%;
+        left: 90px;
+    }    
+
+    .articleMain{
+        left: 150px;
+        width: 450px;
+
+    }
+
+
+    .mainChat__controlsChat{
+        width: 260px;
+        height: 300px;
+    }
+
+    .mainChat__animation{
+        left: calc(45%);
+    }
+
+    .controlsChat__options button:nth-child(2){
+        margin-top: 12px;
+    }
+  }

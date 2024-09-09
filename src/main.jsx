@@ -4,6 +4,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Article } from './Article.jsx';
 import App from './App.jsx';
 import './styles/index.css';
+import "./styles/phone.css";
+import "./styles/tablet.css"
+
 import { ArticlesHome } from './ArticlesHome.jsx';
 import { DbProvider } from './provider.jsx';
 import { Chat } from './Chat.jsx';
